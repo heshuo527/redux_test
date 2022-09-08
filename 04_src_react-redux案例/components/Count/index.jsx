@@ -16,7 +16,7 @@ export default class Count extends Component {
     }
     incrementIfOdd = () => {
         const {value} = this.selectNumber
-        if (this.props.count % 2 === 1) {
+        if (this.props.count === 1) {
             this.props.jia(value * 1)
         }
 
