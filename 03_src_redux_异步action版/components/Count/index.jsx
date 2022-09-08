@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import store from '../../redux/store'
 //引入actionCreator,用于创建action对象
-import {countIncrementAction, countDecrementAction, countIncrementAsyncAction} from '../../redux/count_action'
+import {countIncrementAction, countDecrementAction} from '../../redux/count_action'
 
 export default class Count extends Component {
 
@@ -36,7 +36,9 @@ export default class Count extends Component {
     }
     incrementAsync = () => {
         const {value} = this.selectNumber
-        countIncrementAsyncAction(value * 1, 500)
+        setTimeout(() => {
+            store.dispatch(countIncrementAction(value * 1))
+        }, 500)
     }
 
   render() {
