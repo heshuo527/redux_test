@@ -8,7 +8,6 @@ import {createStore, applyMiddleware, combineReducers} from 'redux'
 import countReducer from './reducers/count.js'
 //引入count_reducer文件
 import personReducer from './reducers/person.js'
-import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 
 const allRedux = combineReducers({
@@ -16,4 +15,4 @@ const allRedux = combineReducers({
     rens: personReducer
 })
 //暴露createStore文件
-export default createStore(allRedux, composeWithDevTools(applyMiddleware(thunk)))
+export default createStore(allRedux, applyMiddleware(thunk))

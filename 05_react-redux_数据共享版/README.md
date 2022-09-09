@@ -68,16 +68,3 @@
                 {key: xxxxxaction}//映射方法
             ) (UI组件)
         3.在UI组件中通过this.props.xxxxx读取和操作状态
-
-### 6.react-redux数据共享版
-    1.定义一个Person组件和Count组件通过redux共享数据
-    2.为Person组件编写: redux,action,配置constent常量
-    3.重点:Person和Count的reducer要使用combineReducers合并
-        合并后的总状态是一个对象!
-    4.交给store的是reducer的总对象,最后在组件中取状态时要"取到位"
-
-### 7.求和案例react-redux开发者的工具使用
-    1.安装库:npm i redux-devtools-extension
-    2.在store中配置
-        引入import {composeWithDevTools} from 'redux-devtools-extension'
-        const store = createStore(allRedux, composeWithDevTools(applyMiddleware(thunk)))
