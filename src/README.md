@@ -26,7 +26,7 @@
         1).reducer的本质是一个函数,接收: preState, action,返回加工后的状态
         2).reducer有两个作用:初始化状态,加工状态
         3).reducer被第一次调用时:是store自动触发的,
-            传递的preState是undefined,
+            传递的preState是undefined, 
             传递的action是:{type:type:'@@REDUX/INIT_a.2.b.4}}}
     5.在index.js中监测store中状态的改变,一旦改变就重新渲染<App/>
         备注:redux只负责管理状态,至于状态的改变驱动着页面的展示,需要我们自己写.
@@ -81,3 +81,7 @@
     2.在store中配置
         引入import {composeWithDevTools} from 'redux-devtools-extension'
         const store = createStore(allRedux, composeWithDevTools(applyMiddleware(thunk)))
+
+### 8.求和案例react-redux最终版
+    1.所有变量名字要规范,尽量触发对象的简写形式
+    2.reducers文件夹中,编写index.jsj专门用于汇总所有reducer并暴露
